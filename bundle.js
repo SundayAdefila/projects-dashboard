@@ -49,14 +49,21 @@
 
 	'use strict';
 	
-	var React = __webpack_require__(/*! react */ 1);
-	var ReactDOM = __webpack_require__(/*! react-dom */ 34);
+	var _react = __webpack_require__(/*! react */ 1);
 	
-	var Header = React.createClass({
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactDom = __webpack_require__(/*! react-dom */ 34);
+	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var Header = _react2.default.createClass({
 	  displayName: 'Header',
 	
 	  render: function render() {
-	    return React.createElement(
+	    return _react2.default.createElement(
 	      'h1',
 	      null,
 	      'Welcome to projects!'
@@ -64,7 +71,7 @@
 	  }
 	});
 	
-	ReactDOM.render(React.createElement(Header, null), document.getElementById('header-title'));
+	_reactDom2.default.render(_react2.default.createElement(Header, null), document.getElementById('header-title'));
 
 /***/ },
 /* 1 */
