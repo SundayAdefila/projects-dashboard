@@ -3,7 +3,10 @@
 
 
 var config = {
-  entry: './index.jsx',
+  entry: [
+   './assets/js/index.jsx',
+   './assets/js/app.js'
+  ],
   output: {
     path: __dirname,
     filename: 'bundle.js'
