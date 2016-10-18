@@ -1,0 +1,22 @@
+{
+  "name": "projects-dashboard",
+  "version": "1.0.0",
+  "description": "dashboard to show list of projects from github, implemented with reactJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack -d --progress --colors --watch"
+  },
+  "author": "Sunday Adefila",
+  "license": "MIT",
+  "dependencies": {
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "webpack": "^1.13.2"
+  },
+  "devDependencies": {}
+}
