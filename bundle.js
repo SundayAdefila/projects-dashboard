@@ -80,7 +80,7 @@
 	    return _react2.default.createElement(
 	      'h1',
 	      null,
-	      'Welcome to projects!'
+	      'My github projects.'
 	    );
 	  }
 	});
@@ -91,14 +91,14 @@
 	  render: function render() {
 	    return _react2.default.createElement(
 	      'div',
-	      { className: 'col s12 m4' },
+	      { className: 'col s12 m6 l4' },
 	      _react2.default.createElement(
 	        'div',
-	        { className: 'card medium' },
+	        { className: 'card medium hoverable' },
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'card-image' },
-	          _react2.default.createElement('img', { src: 'http://placekitten.com/g/400/200' }),
+	          _react2.default.createElement('img', { src: 'http://lorempixel.com/g/400/200/' }),
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'card-title' },

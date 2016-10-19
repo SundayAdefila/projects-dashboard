@@ -6,16 +6,16 @@ import axios from 'axios';
 
 var Header = React.createClass({
   render: function() {
-    return <h1>Welcome to projects!</h1>;
+    return <h1>My github projects.</h1>;
   }
 });
 
 var Project = React.createClass({
   render: function() {
-    return <div className="col s12 m4">
-      <div className="card medium">
+    return <div className="col s12 m6 l4">
+      <div className="card medium hoverable">
         <div className="card-image">
-          <img src="http://placekitten.com/g/400/200" />
+          <img src="http://lorempixel.com/g/400/200/" />
           <span className="card-title">{this.props.repo_name} ({this.props.major_language})</span>
         </div>
         <div className="card-content">
