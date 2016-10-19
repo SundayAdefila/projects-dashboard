@@ -12,13 +12,16 @@ var Header = React.createClass({
 
 var Project = React.createClass({
   render: function() {
-    return <div className="small-6 large-4 columns">
-      <div className="card">
-        <img src="http://placekitten.com/g/400/200" />
-        <div className="card-divider">Built majorly with {this.props.major_language}.</div>
-        <div className="card-section">
-          <h4>{this.props.repo_name}</h4>
+    return <div className="col s12 m4">
+      <div className="card medium">
+        <div className="card-image">
+          <img src="http://placekitten.com/g/400/200" />
+          <span className="card-title">{this.props.repo_name} ({this.props.major_language})</span>
+        </div>
+        <div className="card-content">
           <p>{this.props.description}</p>
+        </div>
+        <div className="card-action">
           <a href={this.props.html_url}>Check it out on github</a>
         </div>
       </div>

@@ -91,31 +91,35 @@
 	  render: function render() {
 	    return _react2.default.createElement(
 	      'div',
-	      { className: 'small-6 large-4 columns' },
+	      { className: 'col s12 m4' },
 	      _react2.default.createElement(
 	        'div',
-	        { className: 'card' },
-	        _react2.default.createElement('img', { src: 'http://placekitten.com/g/400/200' }),
+	        { className: 'card medium' },
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'card-divider' },
-	          'Built majorly with ',
-	          this.props.major_language,
-	          '.'
+	          { className: 'card-image' },
+	          _react2.default.createElement('img', { src: 'http://placekitten.com/g/400/200' }),
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'card-title' },
+	            this.props.repo_name,
+	            ' (',
+	            this.props.major_language,
+	            ')'
+	          )
 	        ),
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'card-section' },
-	          _react2.default.createElement(
-	            'h4',
-	            null,
-	            this.props.repo_name
-	          ),
+	          { className: 'card-content' },
 	          _react2.default.createElement(
 	            'p',
 	            null,
 	            this.props.description
-	          ),
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'card-action' },
 	          _react2.default.createElement(
 	            'a',
 	            { href: this.props.html_url },
