@@ -47,8 +47,7 @@
   \******************/
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(/*! ./assets/js/index.jsx */1);
-	module.exports = __webpack_require__(/*! ./assets/js/app.js */198);
+	module.exports = __webpack_require__(/*! ./assets/js/index.jsx */1);
 
 
 /***/ },
@@ -23578,25 +23577,6 @@
 	    return callback.apply(null, arr);
 	  };
 	};
-
-/***/ },
-/* 198 */
-/*!**************************!*\
-  !*** ./assets/js/app.js ***!
-  \**************************/
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	// import jQuery from './jquery.js';
-	// import './what-input.js';
-	// import './foundation.min.js';
-	
-	// require('./jquery.js');
-	// require('./what-input.js');
-	// require('./foundation.min.js');
-	
-	$(document).foundation();
 
 /***/ }
 /******/ ]);

@@ -1,11 +1,9 @@
 // var webpack = require('webpack');
 // var path = require('path');
 
-
 var config = {
   entry: [
-   './assets/js/index.jsx',
-   './assets/js/app.js'
+   './assets/js/index.jsx'
   ],
   output: {
     path: __dirname,
