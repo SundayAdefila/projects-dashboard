@@ -80,7 +80,7 @@
 	    return _react2.default.createElement(
 	      'h1',
 	      null,
-	      'My github projects.'
+	      'github projects.'
 	    );
 	  }
 	});

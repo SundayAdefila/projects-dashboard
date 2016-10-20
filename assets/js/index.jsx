@@ -6,7 +6,7 @@ import axios from 'axios';
 
 var Header = React.createClass({
   render: function() {
-    return <h1>My github projects.</h1>;
+    return <h1>github projects.</h1>;
   }
 });
 
