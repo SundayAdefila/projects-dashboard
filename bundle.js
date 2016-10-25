@@ -59,6 +59,8 @@
 
 	'use strict';
 	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
 	var _react = __webpack_require__(/*! react */ 2);
 	
 	var _react2 = _interopRequireDefault(_react);
@@ -73,74 +75,106 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var Header = _react2.default.createClass({
-	  displayName: 'Header',
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      { className: 'center-align white-text indigo lighten-2', id: 'header-title' },
-	      _react2.default.createElement(
-	        'h1',
-	        null,
-	        'github projects.'
-	      )
-	    );
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Header = function (_React$Component) {
+	  _inherits(Header, _React$Component);
+	
+	  function Header() {
+	    _classCallCheck(this, Header);
+	
+	    return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).apply(this, arguments));
 	  }
-	});
 	
-	var Project = _react2.default.createClass({
-	  displayName: 'Project',
-	
-	  render: function render() {
-	    var _props$repo = this.props.repo;
-	    var name = _props$repo.name;
-	    var description = _props$repo.description;
-	    var language = _props$repo.language;
-	    var html_url = _props$repo.html_url;
-	
-	
-	    return _react2.default.createElement(
-	      'div',
-	      { className: 'col s12 m6 l4' },
-	      _react2.default.createElement(
+	  _createClass(Header, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
 	        'div',
-	        { className: 'card medium hoverable' },
+	        { className: 'center-align white-text indigo lighten-2', id: 'header-title' },
+	        _react2.default.createElement(
+	          'h1',
+	          null,
+	          'github projects.'
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Header;
+	}(_react2.default.Component);
+	
+	;
+	
+	var Project = function (_React$Component2) {
+	  _inherits(Project, _React$Component2);
+	
+	  function Project() {
+	    _classCallCheck(this, Project);
+	
+	    return _possibleConstructorReturn(this, (Project.__proto__ || Object.getPrototypeOf(Project)).apply(this, arguments));
+	  }
+	
+	  _createClass(Project, [{
+	    key: 'render',
+	    value: function render() {
+	      var _props$repo = this.props.repo;
+	      var name = _props$repo.name;
+	      var description = _props$repo.description;
+	      var language = _props$repo.language;
+	      var html_url = _props$repo.html_url;
+	
+	
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'col s12 m6 l4' },
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'card-image' },
-	          _react2.default.createElement('img', { src: 'http://lorempixel.com/g/400/200/' }),
+	          { className: 'card medium hoverable' },
 	          _react2.default.createElement(
-	            'span',
-	            { className: 'card-title' },
-	            name,
-	            ' (',
-	            language,
-	            ')'
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'card-content' },
+	            'div',
+	            { className: 'card-image' },
+	            _react2.default.createElement('img', { src: 'http://lorempixel.com/g/400/200/' }),
+	            _react2.default.createElement(
+	              'span',
+	              { className: 'card-title' },
+	              name,
+	              ' (',
+	              language,
+	              ')'
+	            )
+	          ),
 	          _react2.default.createElement(
-	            'p',
-	            null,
-	            description
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'card-action' },
+	            'div',
+	            { className: 'card-content' },
+	            _react2.default.createElement(
+	              'p',
+	              null,
+	              description
+	            )
+	          ),
 	          _react2.default.createElement(
-	            'a',
-	            { href: html_url },
-	            'Check it out on github'
+	            'div',
+	            { className: 'card-action' },
+	            _react2.default.createElement(
+	              'a',
+	              { href: html_url },
+	              'Check it out on github'
+	            )
 	          )
 	        )
-	      )
-	    );
-	  }
-	});
+	      );
+	    }
+	  }]);
+	
+	  return Project;
+	}(_react2.default.Component);
+	
+	;
 	
 	var makeProjects = function makeProjects(data) {
 	  if (data.length) {
@@ -156,33 +190,46 @@
 	  );
 	};
 	
-	var Projects = _react2.default.createClass({
-	  displayName: 'Projects',
+	var Projects = function (_React$Component3) {
+	  _inherits(Projects, _React$Component3);
 	
-	  getInitialState: function getInitialState() {
-	    return { github_projects: [] };
-	  },
+	  function Projects() {
+	    _classCallCheck(this, Projects);
 	
-	  componentWillMount: function componentWillMount() {
-	    var _this = this;
+	    var _this3 = _possibleConstructorReturn(this, (Projects.__proto__ || Object.getPrototypeOf(Projects)).call(this));
 	
-	    _axios2.default.get('https://api.github.com/users/sundayadefila/repos').then(function (response) {
-	      _this.setState({ github_projects: response.data });
-	    }).catch(function (error) {
-	      console.log(error);
-	    });
-	  },
-	
-	  render: function render() {
-	    var projects = makeProjects(this.state.github_projects);
-	
-	    return _react2.default.createElement(
-	      'div',
-	      { className: 'row' },
-	      projects
-	    );
+	    _this3.state = { github_projects: [] };
+	    return _this3;
 	  }
-	});
+	
+	  _createClass(Projects, [{
+	    key: 'componentWillMount',
+	    value: function componentWillMount() {
+	      var _this4 = this;
+	
+	      _axios2.default.get('https://api.github.com/users/sundayadefila/repos').then(function (response) {
+	        _this4.setState({ github_projects: response.data });
+	      }).catch(function (error) {
+	        console.log(error);
+	      });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var projects = makeProjects(this.state.github_projects);
+	
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        projects
+	      );
+	    }
+	  }]);
+	
+	  return Projects;
+	}(_react2.default.Component);
+	
+	;
 	
 	var Page = _react2.default.createClass({
 	  displayName: 'Page',

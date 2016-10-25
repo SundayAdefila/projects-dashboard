@@ -2,16 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 
-const Header = React.createClass({
-  render: function() {
+class Header extends React.Component {
+  render() {
     return <div className="center-align white-text indigo lighten-2" id="header-title">
       <h1>github projects.</h1>
     </div>;
   }
-});
+};
 
-const Project = React.createClass({
-  render: function() {
+class Project extends React.Component {
+  render() {
     const {name, description, language, html_url} = this.props.repo;
 
     return <div className="col s12 m6 l4">
@@ -29,9 +29,9 @@ const Project = React.createClass({
       </div>
     </div>;
   }
-});
+};
 
-const makeProjects = function(data) {
+const makeProjects = (data) => {
   if (data.length) {
     return data.map((repo, index) => (
       <Project key={index} repo={repo} />
@@ -41,12 +41,13 @@ const makeProjects = function(data) {
   return <h4 className="text-center text-danger">Some error occured from the API, projects could not be gotten... Maybe try again tomorrow? smiley :D</h4>;
 };
 
-const Projects = React.createClass({
-  getInitialState: function() {
-    return { github_projects: [] };
-  },
+class Projects extends React.Component {
+  constructor() {
+    super();
+    this.state = { github_projects: [] };
+  }
 
-  componentWillMount: function() {
+  componentWillMount() {
     axios.get('https://api.github.com/users/sundayadefila/repos')
     .then((response) => {
       this.setState({ github_projects: response.data })
@@ -54,16 +55,16 @@ const Projects = React.createClass({
     .catch((error) => {
       console.log(error);
     });
-  },
+  }
 
-  render: function() {
+  render() {
     const projects = makeProjects(this.state.github_projects);
 
     return <div className="row">
       { projects }
     </div>;
   }
-});
+};
 
 const Page = React.createClass({
   render: () => {
