@@ -1,44 +1,47 @@
-'use strict';
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 
-var Header = React.createClass({
+const Header = React.createClass({
   render: function() {
-    return <h1>github projects.</h1>;
+    return <div className="center-align white-text indigo lighten-2" id="header-title">
+      <h1>github projects.</h1>
+    </div>;
   }
 });
 
-var Project = React.createClass({
+const Project = React.createClass({
   render: function() {
+    const {name, description, language, html_url} = this.props.repo;
+
     return <div className="col s12 m6 l4">
       <div className="card medium hoverable">
         <div className="card-image">
           <img src="http://lorempixel.com/g/400/200/" />
-          <span className="card-title">{this.props.repo_name} ({this.props.major_language})</span>
+          <span className="card-title">{name} ({language})</span>
         </div>
         <div className="card-content">
-          <p>{this.props.description}</p>
+          <p>{description}</p>
         </div>
         <div className="card-action">
-          <a href={this.props.html_url}>Check it out on github</a>
+          <a href={html_url}>Check it out on github</a>
         </div>
       </div>
     </div>;
   }
 });
 
-var makeProjects = function(data) {
-  if (data.length > 0) {
+const makeProjects = function(data) {
+  if (data.length) {
     return data.map((repo, index) => (
-      <Project key={index} repo_name={repo.name} major_language={repo.language} description={repo.description} html_url={repo.html_url} />
+      <Project key={index} repo={repo} />
     ));
   }
-  else return <h4 className="text-center text-danger">Some error occured from the API, projects could not be gotten... Maybe try again tomorrow? smiley :D</h4>;
+  
+  return <h4 className="text-center text-danger">Some error occured from the API, projects could not be gotten... Maybe try again tomorrow? smiley :D</h4>;
 };
 
-var Projects = React.createClass({
+const Projects = React.createClass({
   getInitialState: function() {
     return { github_projects: [] };
   },
@@ -62,5 +65,13 @@ var Projects = React.createClass({
   }
 });
 
-ReactDOM.render(<Projects />, document.getElementById('projects'));
-ReactDOM.render(<Header />, document.getElementById('header-title'));
+const Page = React.createClass({
+  render: () => {
+    return <div>
+      <Header />
+      <Projects />
+    </div>
+  }
+});
+
+ReactDOM.render(<Page />, document.getElementById('projects'));

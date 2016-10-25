@@ -78,9 +78,13 @@
 	
 	  render: function render() {
 	    return _react2.default.createElement(
-	      'h1',
-	      null,
-	      'github projects.'
+	      'div',
+	      { className: 'center-align white-text indigo lighten-2', id: 'header-title' },
+	      _react2.default.createElement(
+	        'h1',
+	        null,
+	        'github projects.'
+	      )
 	    );
 	  }
 	});
@@ -89,6 +93,13 @@
 	  displayName: 'Project',
 	
 	  render: function render() {
+	    var _props$repo = this.props.repo;
+	    var name = _props$repo.name;
+	    var description = _props$repo.description;
+	    var language = _props$repo.language;
+	    var html_url = _props$repo.html_url;
+	
+	
 	    return _react2.default.createElement(
 	      'div',
 	      { className: 'col s12 m6 l4' },
@@ -102,9 +113,9 @@
 	          _react2.default.createElement(
 	            'span',
 	            { className: 'card-title' },
-	            this.props.repo_name,
+	            name,
 	            ' (',
-	            this.props.major_language,
+	            language,
 	            ')'
 	          )
 	        ),
@@ -114,7 +125,7 @@
 	          _react2.default.createElement(
 	            'p',
 	            null,
-	            this.props.description
+	            description
 	          )
 	        ),
 	        _react2.default.createElement(
@@ -122,7 +133,7 @@
 	          { className: 'card-action' },
 	          _react2.default.createElement(
 	            'a',
-	            { href: this.props.html_url },
+	            { href: html_url },
 	            'Check it out on github'
 	          )
 	        )
@@ -132,11 +143,13 @@
 	});
 	
 	var makeProjects = function makeProjects(data) {
-	  if (data.length > 0) {
+	  if (data.length) {
 	    return data.map(function (repo, index) {
-	      return _react2.default.createElement(Project, { key: index, repo_name: repo.name, major_language: repo.language, description: repo.description, html_url: repo.html_url });
+	      return _react2.default.createElement(Project, { key: index, repo: repo });
 	    });
-	  } else return _react2.default.createElement(
+	  }
+	
+	  return _react2.default.createElement(
 	    'h4',
 	    { className: 'text-center text-danger' },
 	    'Some error occured from the API, projects could not be gotten... Maybe try again tomorrow? smiley :D'
@@ -171,8 +184,20 @@
 	  }
 	});
 	
-	_reactDom2.default.render(_react2.default.createElement(Projects, null), document.getElementById('projects'));
-	_reactDom2.default.render(_react2.default.createElement(Header, null), document.getElementById('header-title'));
+	var Page = _react2.default.createClass({
+	  displayName: 'Page',
+	
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(Header, null),
+	      _react2.default.createElement(Projects, null)
+	    );
+	  }
+	});
+	
+	_reactDom2.default.render(_react2.default.createElement(Page, null), document.getElementById('projects'));
 
 /***/ },
 /* 2 */
